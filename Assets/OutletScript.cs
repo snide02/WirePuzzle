@@ -16,17 +16,21 @@ public class OutletScript : MonoBehaviour
         
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, size);
+    }
+
     // Update is called once per frame
     void Update()
     {
         Collider2D[] detectPlayer = Physics2D.OverlapBoxAll(transform.position, size, playerLayer);
+        Debug.Log(detectPlayer.Length);
 
-        for(int i = 0; i < detectPlayer.Length; i++)
+        if (detectPlayer.Length > 0)
         {
-            if(detectPlayer[i] == player)
-            {
-                Debug.Log("Wire Secured");
-            }
+            Debug.Log("Wire Connected");
         }
     }
 }
