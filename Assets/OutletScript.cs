@@ -5,32 +5,49 @@ using UnityEngine;
 public class OutletScript : MonoBehaviour
 {
     public GameObject player;
+    public int range;
+    private bool wireConnectable = false;
 
-    public Vector2 size;
-
-    public LayerMask playerLayer;
-    
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, size);
-    }
-
     // Update is called once per frame
     void Update()
     {
-        Collider2D[] detectPlayer = Physics2D.OverlapBoxAll(transform.position, size, playerLayer);
-        Debug.Log(detectPlayer.Length);
+        detectPlayer();
+        connectWire();
+    }
 
-        if (detectPlayer.Length > 0)
+    void detectPlayer()
+    {
+        if(Vector2.Distance(transform.position, player.transform.position) < range)
         {
-            Debug.Log("Wire Connected");
+            Debug.Log("Press E to connect wire");
+            wireConnectable = true;
+        }
+        else
+        {
+            wireConnectable = false;
+        }
+    }
+
+    void connectWire()
+    {
+        if(wireConnectable == true)
+        {
+            //Display UI asking to connect the wire
+
+            if(Input.GetKeyDown("e"))
+            {
+                //Connect Wire
+            }
+        }
+        else
+        {
+            //Hide UI asking to connect the wire
         }
     }
 }
