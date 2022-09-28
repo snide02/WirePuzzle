@@ -16,6 +16,19 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform, Vector3.up);
+        pointToPlayer();
+    }
+
+    void pointToPlayer()
+    {
+        float xPos = player.transform.position.x;
+        float yPos = player.transform.position.y;
+
+        float sideA = transform.position.x - xPos;
+        float sideB = transform.position.y - yPos;
+
+        float zAngle = Mathf.Atan2(sideB, sideA) * Mathf.Rad2Deg;
+
+        transform.eulerAngles = new Vector3(0f, 0f, zAngle);
     }
 }
