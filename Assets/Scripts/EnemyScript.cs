@@ -6,11 +6,13 @@ public class EnemyScript : MonoBehaviour
 {
     public GameObject projectile;
     public GameObject player;
-    
+
+    public int shootSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("shoot", shootSpeed, shootSpeed);
     }
 
     // Update is called once per frame
@@ -30,5 +32,11 @@ public class EnemyScript : MonoBehaviour
         float zAngle = Mathf.Atan2(sideB, sideA) * Mathf.Rad2Deg;
 
         transform.eulerAngles = new Vector3(0f, 0f, zAngle);
+    }
+
+    void shoot()
+    {
+        GameObject projectileClone = Instantiate(projectile, projectile.transform.position, projectile.transform.rotation);
+        projectileClone.SetActive(true);
     }
 }
