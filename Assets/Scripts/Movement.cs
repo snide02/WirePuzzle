@@ -12,7 +12,8 @@ public class Movement : MonoBehaviour
         // Move to mouse click position
         if (Input.GetMouseButtonDown(0)){
             key = false;
-            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);   
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
         if (mousePosition != Vector2.zero && key == false){
             transform.position = Vector2.MoveTowards(transform.position, mousePosition, moveSpeed * Time.deltaTime);
@@ -22,18 +23,22 @@ public class Movement : MonoBehaviour
         if (Input.GetKey("down")){
             key = true;
             transform.Translate(0, (-1 * Time.deltaTime * moveSpeed), 0);
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
         if (Input.GetKey("up")){
             key = true;
             transform.Translate(0, (1 * Time.deltaTime * moveSpeed), 0);
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
         if (Input.GetKey("left")){
             key = true;
             transform.Translate((-1 * Time.deltaTime * moveSpeed), 0, 0);
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
         if (Input.GetKey("right")){
             key = true;
             transform.Translate((1 * Time.deltaTime * moveSpeed), 0, 0);
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
     }
 }

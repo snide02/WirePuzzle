@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public GameObject projectile;
+    public GameObject enemyProjectile;
     public GameObject player;
 
     public int shootSpeed;
@@ -36,7 +36,7 @@ public class EnemyScript : MonoBehaviour
 
     void shoot()
     {
-        GameObject projectileClone = Instantiate(projectile, projectile.transform.position, projectile.transform.rotation);
+        GameObject projectileClone = Instantiate(enemyProjectile, enemyProjectile.transform.position, enemyProjectile.transform.rotation);
         projectileClone.SetActive(true);
     }
 }
