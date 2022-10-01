@@ -29,7 +29,6 @@ public class ProjectileScript : MonoBehaviour
         else if(collsion.gameObject.tag == "Enemy")
         {
             Destroy(collsion.gameObject);
-            playerHitScript.enemiesAmount --;
         }
     }
 }
