@@ -30,5 +30,7 @@ public class ProjectileScript : MonoBehaviour
         {
             Destroy(collsion.gameObject);
         }
+
+        Destroy(this.gameObject);
     }
 }
