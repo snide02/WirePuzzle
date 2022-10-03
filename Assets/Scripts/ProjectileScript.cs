@@ -30,6 +30,10 @@ public class ProjectileScript : MonoBehaviour
         {
             Destroy(collsion.gameObject);
         }
+        else if (collsion.gameObject.tag == "Player")
+        {
+            Destroy(collsion.gameObject);
+        }
 
         Destroy(this.gameObject);
     }
