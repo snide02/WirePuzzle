@@ -6,6 +6,7 @@ public class PauseScript : MonoBehaviour
 {
     public GameObject PauseMenu;
     bool pause = false;
+    
 
     void Start()
     {
@@ -29,7 +30,16 @@ public class PauseScript : MonoBehaviour
 
     public void RestartButton()
     {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1.0f;
+    }
+    public void MainMenu()
+    {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1.0f;
+    }
+    public void QuitButton()
+    {
+        Application.Quit();
     }
 }
