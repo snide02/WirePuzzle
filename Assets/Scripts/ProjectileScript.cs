@@ -17,7 +17,7 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * speed, Space.Self);
+        transform.Translate(Vector3.left * speed * Time.timeScale, Space.Self);
     }
 
     void OnCollisionEnter2D(Collision2D collsion)
