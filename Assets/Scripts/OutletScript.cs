@@ -8,6 +8,8 @@ public class OutletScript : MonoBehaviour
     public int range;
     private bool wireConnectable = false;
 
+    public GameObject winManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,7 @@ public class OutletScript : MonoBehaviour
 
             if(Input.GetKeyDown("e"))
             {
-                //Connect Wire
+                winManager.GetComponent<WiinScript>().plugin();
             }
         }
         else
