@@ -34,4 +34,9 @@ public class MenuScripts : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void BeastMode()
+    {
+        Time.timeScale = 10f;
+    }
 }
