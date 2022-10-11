@@ -5,10 +5,13 @@ using UnityEngine;
 public class OutletScript : MonoBehaviour
 {
     public GameObject player;
+    public GameObject winManager;
+
     public int range;
+    public int outletNumber;
+
     private bool wireConnectable = false;
 
-    public GameObject winManager;
 
     // Start is called before the first frame update
     void Start()
@@ -40,11 +43,16 @@ public class OutletScript : MonoBehaviour
     {
         if(wireConnectable == true)
         {
-            //Display UI asking to connect the wire
-
             if(Input.GetKeyDown("e"))
             {
-                winManager.GetComponent<WinScript>().plugin();
+                if(outletNumber == 1)
+                {
+                    winManager.GetComponent<WinScript>().outlet1 = true;
+                }
+                else
+                {
+                    winManager.GetComponent<WinScript>().outlet2 = true;
+                }
             }
         }
         else

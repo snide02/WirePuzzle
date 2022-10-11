@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class BeastModeScript : MonoBehaviour
 {
-    public bool beastMode;
-    
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        if (beastMode == true)
-        {
-            Time.timeScale = 10f;
-        }
+        DontDestroyOnLoad(this.gameObject);
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        Time.timeScale = 10f;
     }
 }

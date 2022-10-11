@@ -6,6 +6,7 @@ public class MenuScripts : MonoBehaviour
 {
     public GameObject MainMenus;
     public GameObject SettingsMenu;
+    public GameObject beastModeObj;
 
     void Start()
     {
@@ -37,6 +38,6 @@ public class MenuScripts : MonoBehaviour
 
     public void BeastMode()
     {
-        Time.timeScale = 10f;
+        beastModeObj.SetActive(true);
     }
 }

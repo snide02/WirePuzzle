@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class WinScript : MonoBehaviour
 {
-    public int outletCounter = 0;
-
     public GameObject WinMenu;
-    
+    public bool outlet1 = false;
+    public bool outlet2 = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +20,9 @@ public class WinScript : MonoBehaviour
         
     }
 
-    public void plugin()
+    public void plugin1()
     {
-        outletCounter++;
-
-        if(outletCounter == 2)
+        if(outlet1 == true && outlet2 == true)
         {
             WinMenu.SetActive(true);
             Time.timeScale = 0.0f;
