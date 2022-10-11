@@ -9,7 +9,7 @@ public class BombScript : MonoBehaviour
     public GameObject player;
     public int range;
 
-    public GameObject youLoseText;
+    public GameObject LoseMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +27,8 @@ public class BombScript : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.transform.position) < range)
         {
-            youLoseText.SetActive(true);
-            Time.timeScale = 0f;
+            LoseMenu.SetActive(true);
+            Time.timeScale = 0.0f;
         }
     }
 }

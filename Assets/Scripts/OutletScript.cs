@@ -44,7 +44,7 @@ public class OutletScript : MonoBehaviour
 
             if(Input.GetKeyDown("e"))
             {
-                winManager.GetComponent<WiinScript>().plugin();
+                winManager.GetComponent<WinScript>().plugin();
             }
         }
         else

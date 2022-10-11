@@ -15,6 +15,7 @@ public class MenuScripts : MonoBehaviour
     public void StartButton()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1f;
     }
 
     public void SettingsButton()
