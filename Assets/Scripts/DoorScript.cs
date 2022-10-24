@@ -35,28 +35,28 @@ public class DoorScript : MonoBehaviour
 
             if (direction == "up")
             {
-                collision.transform.position = new Vector2(transform.position.x, transform.position.y + 3);
+                collision.transform.position = new Vector2(transform.position.x, transform.position.y + 4);
                 cameraObject.GetComponent<CameraScript>().startWaypoint = startWaypoint;
                 cameraObject.GetComponent<CameraScript>().endWaypoint = endWaypoint;
                 cameraObject.GetComponent<CameraScript>().elapsedTime = 0f;
             }
             else if (direction == "down")
             {
-                collision.transform.position = new Vector2(transform.position.x, transform.position.y - 3);
+                collision.transform.position = new Vector2(transform.position.x, transform.position.y - 4);
                 cameraObject.GetComponent<CameraScript>().startWaypoint = startWaypoint;
                 cameraObject.GetComponent<CameraScript>().endWaypoint = endWaypoint;
                 cameraObject.GetComponent<CameraScript>().elapsedTime = 0f;
             }
             else if (direction == "right")
             {
-                collision.transform.position = new Vector2(transform.position.x + 3, transform.position.y);
+                collision.transform.position = new Vector2(transform.position.x + 4, transform.position.y);
                 cameraObject.GetComponent<CameraScript>().startWaypoint = startWaypoint;
                 cameraObject.GetComponent<CameraScript>().endWaypoint = endWaypoint;
                 cameraObject.GetComponent<CameraScript>().elapsedTime = 0f;
             }
             else if (direction == "left")
             {
-                collision.transform.position = new Vector2(transform.position.x - 3, transform.position.y);
+                collision.transform.position = new Vector2(transform.position.x - 4, transform.position.y);
                 cameraObject.GetComponent<CameraScript>().startWaypoint = startWaypoint;
                 cameraObject.GetComponent<CameraScript>().endWaypoint = endWaypoint;
                 cameraObject.GetComponent<CameraScript>().elapsedTime = 0f;

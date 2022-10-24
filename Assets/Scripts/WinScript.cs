@@ -17,15 +17,15 @@ public class WinScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void plugin1()
-    {
-        if(outlet1 == true && outlet2 == true)
+        if (outlet1 == true && outlet2 == true)
         {
             WinMenu.SetActive(true);
             Time.timeScale = 0.0f;
         }
+    }
+
+    public void plugin1()
+    {
+        
     }
 }

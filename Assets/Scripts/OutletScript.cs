@@ -6,6 +6,7 @@ public class OutletScript : MonoBehaviour
 {
     public GameObject player;
     public GameObject winManager;
+    public GameObject outletUI;
 
     public int range;
     public int outletNumber;
@@ -45,7 +46,7 @@ public class OutletScript : MonoBehaviour
         {
             if(Input.GetKeyDown("e"))
             {
-                if(outletNumber == 1)
+                if (outletNumber == 1)
                 {
                     winManager.GetComponent<WinScript>().outlet1 = true;
                 }
@@ -54,10 +55,12 @@ public class OutletScript : MonoBehaviour
                     winManager.GetComponent<WinScript>().outlet2 = true;
                 }
             }
+
+            outletUI.SetActive(true);
         }
         else
         {
-            //Hide UI asking to connect the wire
+            outletUI.SetActive(false);
         }
     }
 }
